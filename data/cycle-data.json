@@ -1,6 +1,6 @@
 {
   "appName": "Jak mít jednodušší život s Barunkou",
-  "appSubtitle": "Jak si užít den ve všech fázích své ženy",
+  "appSubtitle": "Jak si užít den ve všech fázích své ženy?",
   "language": "cs",
 
   "cycleSettings": {
@@ -24,23 +24,23 @@
   "shortTodaySummaries": {
     "menstrual": [
       "Ajaj, je to tady. Být tebou, udělala bych snídani do postele a zdržela se nevhodných komentářů...",
-      "Menstruační edice Barunky je tu. Dnes fungujou hlavně objetí, čaj a to, že se mě nebudeš ptát, jak se cítím.",
-      "Je to tu zas – červený alarm. Buď hodný, buď potichu, a jestli chceš být hrdina, přines čokoládu."
+      "Rudá armáda dorazila hihih. Čajík, čokoládka a ranní pomazlení by mohli fungovat.",
+      "Měsíc s měsícem se sešel. Buď hodný, buď potichu, a přines čokoládu."
     ],
     "follicular": [
-      "Teď tě čeká skvělý týden a půl – využij toho. Vytáhni mě na procházku, na matchu do Daydreameru nebo si udělejme večeři při svíčkách. Už bych (snad) neměla být tak protivná hihi.",
-      "Vracím se do formy. Ideální čas navrhnout něco, co bys se mnou jindy bál navrhnout.",
-      "Jsem zase snesitelná, možná i milá. Využij to okno, než přijde další bouřka."
+      "Teď tě čeká skvělý týden a půl. Vytáhni mě na procházku, na matchu do Daydreameru nebo si udělejme večeři při svíčkách. Už bych (snad) neměla být tak protivná hihi.",
+      "Bouřka přešla a blízká se na lepší časy (přesněji cca týden a půl). Pojďmě vyzkoušet něco nového.",
+      "Jsem zpět ve formě snesitelnosti a možná jsem i milá. Pojďme společně něco vykopnout."
     ],
     "ovulation": [
       "Tohle je tvoje šance vytřískat ze mě to nejlepší. Toto je peak ze všech peaků. Cítím se jako nepřemožitelná žena, která dokáže všechno.",
-      "Dnes jsem nejlepší verze sebe – sebevědomá, žhavá, nezastavitelná. Užij si to, trvá to jen pár dní.",
-      "Tohle je moje hvězdná hodina. Kdo si mě dneska nevšimne, ten si nezaslouží druhou šanci."
+      "JE TO TADYYYY. Žena sebevědomá, žhavá a nezastavitelná.",
+      "Vajíčka se třesou štěstím a napětím..."
     ],
     "luteal": [
       "Tady bych být tebou šla do prdele (slušně řečeno...). Budu hodně papat, ronit slzy, stěžovat si na svou nafouklou postavu, a jestli bude špatné počasí, budeš nejspíš týden ležet na gauči.",
-      "PMS mód: zapnuto. Jídlo, pláč a nespokojenost se vším jsou dnes na programu – neber si to osobně.",
-      "Dnes jsem verze sebe, kterou bych sama nechtěla potkat. Buď trpělivý, tohle brzo přejde."
+      "Na programu dne: jídlo, pláč, jídlo, pláč, pláč, nespokojenost, jídlo...",
+      "Omlouvám se. Mě se to taky nelíbí, ale ty hormony si dělají co chtějí. Bojím se sama sebe. Nejsi sám, kdo nechce být teď v mé přítomnosti."
     ]
   },
 
@@ -48,26 +48,26 @@
     "menstrual": {
       "emotionalState": [
         "Jak se asi můžu cítit, když mi z těla vychází x litrů krve a jakoby mi někdo bodal do břicha.",
-        "Citlivá na všechno – i na to, jak dýcháš. Nic si z toho nedělej, není to o tobě.",
-        "Mám náladu jako na houpačce a ještě ke všemu bolí břicho. Buď rád, že aspoň nekřičím (zatím)."
+        "Jo mám se špatně, děkuji za optání.",
+        "Mám náladu jako na houpačce."
       ],
       "physicalState": [
         "První dva dny jsou nejhorší. Pak už na mě klidně můžeš začít mluvit.",
-        "Křeče, únava, a pocit, že mi někdo ždíme vnitřnosti. Béžová deka a ticho jsou moji nejlepší přátelé.",
-        "Tělo mi říká, ať nikam nechodím. Poslouchám ho."
+        "Chtěla bych ležet zabalená v dece, pít kakaíčko a koukat na rod draka.",
+        "Nálada pod Urfíka."
       ],
       "energy": [
         "Kdyby existovala pouze postel, byla bych nejšťastnější na světě.",
-        "Nulová. Vstala jsem jen proto, abych ti tohle napsala.",
-        "Beru to po schodech, ne po žebříku – dnes fakt netlač."
+        "Neni. Vstala jsem jen proto, abych ti tohle napsala.",
+        "Zzzzzzzzz."
       ],
       "detailedExplanation": "Pokud vajíčko nebylo oplodněné, hladiny estrogenu a progesteronu klesnou, děložní sliznice už není potřeba, takže se její horní vrstva odloučí a vyjde ven jako menstruační krvácení. Křeče při menstruaci jsou způsobené stahy svaloviny dělohy, která se snaží sliznici „vytlačit ven“, zároveň se může měnit chemie v těle, což ovlivňuje energii, náladu, citlivost na bolest nebo spánek."
     },
     "follicular": {
       "emotionalState": [
         "Obecně se mám asi fajn, tak mě moc neser.",
-        "V klidu, v pohodě, docela ráda se směju i tvým špatným vtipům.",
-        "Nic mě extra netrápí – teď je čas na plány, ne na řešení dramat."
+        "Docela ráda se směju i tvým špatným vtipům.",
+        "Nic mě extra netrápí."
       ],
       "physicalState": [
         "Jo tady se nic zvláštního neděje.",
@@ -76,34 +76,34 @@
       ],
       "energy": [
         "Stoupá a lepší se, takže super timing na plánování maratonů, hyroxů a spartanů.",
-        "Jde nahoru raketovým tempem – klidně mě zkus i unavit, uvidíme, kdo vydrží dýl.",
-        "Mám chuť hýbat se a něco dokazovat. Využij to a vytáhni mě ven."
+        "Klidně mě zkus i unavit, uvidíme, kdo vydrží dýl.",
+        "Pojďme si zaběhat..tentokrát by to mohlo být bez odmlouvání."
       ],
       "detailedExplanation": "Když začne krvácení, hypofýza zvyšuje pohlavní hormon, ten stimuluje ve vaječníku folikuly (váčky s vajíčky) k dozrávání a k produkci estrogenu, který v těle postupně roste. Estrogen způsobí, že děložní sliznice znovu narůstá a „zjemňuje se“, aby byla připravená přijmout případné oplodněné vajíčko, zároveň vyšší estrogen často souvisí s lepší náladou, vyšší energií a větší sociální a sexuální motivací."
     },
     "ovulation": {
       "emotionalState": [
         "Miluju sebe, tebe a všechno ostatní.",
-        "Sebevědomá na maximum – klidně mi to i řekni nahlas, ráda si to poslechnu.",
-        "Cítím se neporazitelná. Užívej si mě v týhle formě, dokud to trvá."
+        "Chci být středem pozornosti.",
+        "Cítím se neporazitelná."
       ],
       "physicalState": [
         "Chci sex, pracovat, sportovat, bavit se, zkoušet nový věci, poznávat nový lidi, dostávat kytky, chodit rande.",
-        "Tělo mi říká ano na skoro všechno. Ty víš, na co narážím.",
-        "Cítím se přitažlivá a plná energie – využij to, než to zase splaskne."
+        "Chci sex, pracovat, sportovat, bavit se, zkoušet nový věci, poznávat nový lidi, dostávat kytky, chodit rande.",
+        "Chci sex, pracovat, sportovat, bavit se, zkoušet nový věci, poznávat nový lidi, dostávat kytky, chodit rande."
       ],
       "energy": [
         "Však je to asi jasný.",
-        "Na maximu. Nezastavím se, dokud mě něco nezastaví.",
-        "Nabitá jak nikdy – klidně mě zkus doběhnout."
+        "Chci dělat všechno na co stačím.",
+        "Jedeme bomby."
       ],
       "detailedExplanation": "Jak estrogen vystoupá na vysokou hladinu, otočí se zpětná vazba v mozku z negativní na pozitivní, hypofýza uvolní prudký luteinizační hormon, který spustí ovulaci, tedy prasknutí dominantního folikulu a uvolnění vajíčka z vaječníku. Vajíčko se dostane do vejcovodu a několik hodin až dní je připravené být oplodněné spermií, zatímco tělo krátce funguje v módu maximální plodnosti, což se může projevit změnou hlenu v pochvě, zvýšeným libidem a někdy i lehkou bolestí v podbřišku."
     },
     "luteal": {
       "emotionalState": [
-        "Tak a tohle je opravdu špatná doba, kterou nezávidím ani tobě ani sobě, bohužel je to ještě horší než samotná menstruace.",
-        "Podrážděná, přecitlivělá, nasraná na věci, co mi jindy nevadí. Fakt to není o tobě.",
-        "Nálady se mi mění rychlostí blesku. I mně je z toho někdy blbě, natož tobě."
+        "Tyhle okamžiky nezávidím ani tobě ani sobě.",
+        "Přišlo to nejhorší. Musíme bojovat.",
+        "Končí veškerá prdel. Opovaž se vedle mě špatně dýchat."
       ],
       "physicalState": [
         "Mám chuť na všechno, co existuje i neexistuje, brečím – často! Nelíbím se sama sobě, nechci slyšet tvoje vtipy a businessové plány, protože teď zrovna nejsem ve stavu dobývání světa... a takový malý tip: jestli jsme sexy time tenhle měsíc ještě neměli, tak tohle je naše poslední šance, jinak se dostávám do velké nepohody, ups.",
@@ -112,8 +112,8 @@
       ],
       "energy": [
         "Na rozdávání ji úplně nemám.",
-        "Šetřím si ji jen na to nejnutnější – a to nejseš ty s dalším nápadem na výlet.",
-        "Baterka na pár procentech. Nabij mě trpělivostí, ne řešeními."
+        "Šetřím si ji na to nejnutnější.",
+        "Úplně moc ji nemám."
       ],
       "detailedExplanation": "Po ovulaci se z prasklého folikulu stane žluté tělísko, které produkuje hlavně progesteron, ten zahušťuje a stabilizuje sliznici dělohy, tlumí další zrání vajíček a vytváří prostředí pro případné uhnízdění embrya. Pokud k oplodnění nedojde, žluté tělísko zaniká, progesteron a estrogen klesají, cévy ve sliznici se zavírají a tkáň začne odumírat, což spustí další menstruaci; kolísání hormonů v této fázi je hlavním důvodem PMS symptomů jako výkyvy nálady, nafouknutí, únava nebo změny chuti k jídlu."
     }
@@ -121,49 +121,41 @@
 
   "supportNotes": {
     "menstrual": [
-      "Utrhni mi venku kytičku.",
-      "Udělej mi čaj a nesuď, že chci ležet celý den.",
-      "Objetí beze slov dnes zabírá líp než jakákoliv rada."
+      "Utrhni mi venku kytičku a dopřej mi hromadu čokolády.",
     ],
     "follicular": [
-      "Kup mi kytičku.",
-      "Navrhni výlet – teď je šance, že řeknu ano skoro na cokoliv.",
-      "Nauč mě něco nového, teď mám na to hlavu."
+      "Daruj mi kytičku a vytáhni mě na procházku.",
     ],
     "ovulation": [
-      "Daruj mi kytičku.",
-      "Nezůstávej pozadu – teď je čas iniciativu opětovat, ne čekat.",
-      "Řekni mi, že jsem žhavá. Vážně, řekni to nahlas."
+      "Kup mi kytičku a miluj mě.",
     ],
     "luteal": [
-      "Kytičkou mi uděláš radost.",
-      "Nech mě chvíli být, ale zůstaň v dosahu – obojí najednou, vím, že to zní složitě.",
-      "Neřeš to se mnou logicky, jen mě obejmi. Logika teď nezabírá."
+      "Kytičkou mi uděláš radost a to stačí.",
     ]
   },
 
   "playfulLines": {
     "menstrual": [
       "Obejmi mě a bude dobře.",
-      "I bolavá jsem pořád tvoje – jen dnes trochu pomalejší verze.",
-      "Za odměnu za trpělivost tě čeká líbánky verze mě, jakmile tohle přejde."
+      "Budu trochu pomalejší verze.",
+      "Za odměnu přijdou dva super týdny."
     ],
     "follicular": [
-      "Tohle je verze, co řekne ano skoro na cokoliv. Vezmi svoje šílený nápady a pusťme se do nich.",
-      "Tohle je verze mě, co si věří – využij ji, dokud trvá.",
-      "Klidně mě zkus zaskočit něčím novým. Teď jsem naladěná na dobrodružství."
+      "Tohle je verze, co řekne ano na cokoliv. Vezmi svoje šílený nápady a pusťme se do nich.",
+      "Hurá za dobrodružstvím.",
+      "Zkus zaskočit něčím novým."
     ],
     "ovulation": [
       "Však víš, co dělat.",
-      "Tohle je týden, kdy jsem si nejvíc jistá, že jsem si tě vybrala dobře.",
-      "Peak forma, peak nálada, peak všechno. Neboj se toho využít."
+      "A MILUJU A MALUJU A MILUJU A MALUJU TUTUDUUDU.",
+      "Jestli chceme udělat něco velkýho, tak teď je ten čas."
     ],
     "luteal": [
-      "I když budu připomínat naštvaného dinosaura, tak tě mám ráda i tak.",
-      "I ve verzi, kdy nesnáším úplně všechno, jsi pořád jediný, koho chci mít nablízko.",
-      "Přežij tenhle týden se mnou a slibuju, že příští budu zas snesitelná."
+      "I když budu naštvaný dinosaurus, tak tě mám ráda i tak.",
+      "I když nesnáším úplně všechno, jsi pořád jediný, koho mám ráda. O vtipy se ale nepokoušej.",
+      "Přežij tenhle týden se mnou a slibuju, že příští budu zas o něco snesitelnější hihih."
     ]
   },
 
-  "disclaimer": "Hehehe ale pořád jsem jen žena a tohle všechno může být úplně jinak."
+  "disclaimer": "Hehehe ale pořád jsem jen žena a tohle všechno může být úplně jinak, promiň."
 }
