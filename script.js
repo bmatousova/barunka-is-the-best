@@ -57,8 +57,8 @@ function getCycleInfo(date) {
   const mod = ((diff % cycleLength) + cycleLength) % cycleLength; // always 0..cycleLength-1
   const cycleDay = mod + 1; // 1-indexed
 
-  const ovulationDay = Math.max(1, cycleLength - 13); // ~14 days before next period
-  // Fertile window: the 5 fertile days before ovulation, plus ovulation day itself (~6 days total)
+  const ovulationDay = Math.max(1, cycleLength - 13); // 14 days before next period
+  // Fertile window: the 5 days before ovulation, plus ovulation day itself (6 days total)
   const ovulationWindowStart = Math.max(1, ovulationDay - 5);
   const ovulationWindowEnd = ovulationDay;
 
@@ -66,15 +66,10 @@ function getCycleInfo(date) {
   const isOvulationDay = cycleDay >= ovulationWindowStart && cycleDay <= ovulationWindowEnd;
 
   let phase;
-  if (isPeriodDay) {
-    phase = 'menstrual';
-  } else if (isOvulationDay) {
-    phase = 'ovulation';
-  } else if (cycleDay < ovulationWindowStart) {
-    phase = 'follicular';
-  } else {
-    phase = 'luteal';
-  }
+  if (isPeriodDay) phase = 'menstrual';
+  else if (isOvulationDay) phase = 'ovulation';
+  else if (cycleDay < ovulationWindowStart) phase = 'follicular';
+  else phase = 'luteal';
 
   return { cycleDay, phase, isPeriodDay, isOvulationDay };
 }
@@ -83,13 +78,13 @@ function renderToday() {
   const info = getCycleInfo(new Date());
   const phase = info.phase;
   const def = cycleData.phaseDefinitions[phase];
-  const support = cycleData.supportNotes[phase] && cycleData.supportNotes[phase][0];
+  const support = cycleData.supportNotes[phase] || cycleData.supportNotes[phase][0];
 
   document.getElementById('phase-name').textContent = def.displayName;
   document.getElementById('cycle-day').textContent =
     `Den cyklu ${info.cycleDay} z ${cycleData.cycleSettings.averageCycleLengthDays}`;
   document.getElementById('today-summary').textContent = cycleData.shortTodaySummaries[phase];
-  document.getElementById('support-line').textContent = support || '';
+  document.getElementById('support-line').textContent = support;
 }
 
 function populateDetailPanel(date) {
@@ -97,7 +92,7 @@ function populateDetailPanel(date) {
   const phase = info.phase;
   const def = cycleData.phaseDefinitions[phase];
   const detail = cycleData.detailedTodayContent[phase];
-  const playful = cycleData.playfulLines[phase] && cycleData.playfulLines[phase][0];
+  const playful = cycleData.playfulLines[phase] || cycleData.playfulLines[phase][0];
 
   document.getElementById('detail-title').textContent = def.displayName;
   document.getElementById('detail-date').textContent = formatDateCs(date);
@@ -105,7 +100,7 @@ function populateDetailPanel(date) {
   document.getElementById('detail-physical').textContent = detail.physicalState;
   document.getElementById('detail-energy').textContent = detail.energy;
   document.getElementById('detail-explanation').textContent = detail.detailedExplanation;
-  document.getElementById('detail-playful').textContent = playful || '';
+  document.getElementById('detail-playful').textContent = playful;
   document.getElementById('disclaimer').textContent = cycleData.disclaimer;
 }
 
@@ -167,7 +162,6 @@ function setupDetailPanel() {
   btn.addEventListener('click', () => open(new Date()));
   closeBtn.addEventListener('click', close);
   overlay.addEventListener('click', close);
-
   openDetailForDate = open;
 }
 
@@ -175,20 +169,13 @@ function setupCalendarNav() {
   document.getElementById('cal-prev').addEventListener('click', () => {
     const today = startOfMonth(new Date());
     const prev = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() - 1, 1);
-    if (prev >= today) {
-      calendarViewDate = prev;
-      renderCalendar();
-    }
+    if (prev >= today) { calendarViewDate = prev; renderCalendar(); }
   });
-
   document.getElementById('cal-next').addEventListener('click', () => {
     const today = startOfMonth(new Date());
     const maxMonth = new Date(today.getFullYear(), today.getMonth() + 12, 1);
     const next = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() + 1, 1);
-    if (next <= maxMonth) {
-      calendarViewDate = next;
-      renderCalendar();
-    }
+    if (next < maxMonth) { calendarViewDate = next; renderCalendar(); }
   });
 }
 
@@ -226,19 +213,14 @@ function renderCalendar() {
     cell.type = 'button';
     cell.className = `day-cell is-${info.phase}`;
     if (daysBetween(today, date) === 0) cell.classList.add('is-today');
-
     const def = cycleData.phaseDefinitions[info.phase];
-    cell.setAttribute('aria-label', `${d}. ${MONTH_NAMES_CS[month]} – ${def.displayName}, den cyklu ${info.cycleDay}`);
-
+    cell.setAttribute('aria-label',
+      `${d}. ${MONTH_NAMES_CS[month]}, ${def.displayName}, den cyklu ${info.cycleDay}`);
     const number = document.createElement('span');
     number.className = 'day-number';
     number.textContent = String(d);
     cell.appendChild(number);
-
-    cell.addEventListener('click', () => {
-      if (openDetailForDate) openDetailForDate(date);
-    });
-
+    cell.addEventListener('click', () => { if (openDetailForDate) openDetailForDate(date); });
     grid.appendChild(cell);
   }
 
