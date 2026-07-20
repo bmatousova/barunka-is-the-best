@@ -17,6 +17,8 @@ async function init() {
     return;
   }
 
+  document.getElementById('app-subtitle').textContent = cycleData.appSubtitle;
+
   setupTabs();
   setupDetailPanel();
   renderToday();
@@ -42,6 +44,10 @@ function startOfMonth(date) {
   return new Date(date.getFullYear(), date.getMonth(), 1);
 }
 
+function formatDateCs(date) {
+  return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+}
+
 function getCycleInfo(date) {
   const anchor = parseAnchorDate(cycleData.anchorDate);
   const cycleLength = cycleData.cycleSettings.averageCycleLengthDays;
@@ -52,8 +58,9 @@ function getCycleInfo(date) {
   const cycleDay = mod + 1; // 1-indexed
 
   const ovulationDay = Math.max(1, cycleLength - 13); // ~14 days before next period
-  const ovulationWindowStart = ovulationDay - 1;
-  const ovulationWindowEnd = ovulationDay + 1;
+  // Fertile window: the 5 fertile days before ovulation, plus ovulation day itself (~6 days total)
+  const ovulationWindowStart = Math.max(1, ovulationDay - 5);
+  const ovulationWindowEnd = ovulationDay;
 
   const isPeriodDay = cycleDay <= periodLength;
   const isOvulationDay = cycleDay >= ovulationWindowStart && cycleDay <= ovulationWindowEnd;
@@ -76,17 +83,24 @@ function renderToday() {
   const info = getCycleInfo(new Date());
   const phase = info.phase;
   const def = cycleData.phaseDefinitions[phase];
-  const detail = cycleData.detailedTodayContent[phase];
   const support = cycleData.supportNotes[phase] && cycleData.supportNotes[phase][0];
-  const playful = cycleData.playfulLines[phase] && cycleData.playfulLines[phase][0];
 
   document.getElementById('phase-name').textContent = def.displayName;
   document.getElementById('cycle-day').textContent =
     `Den cyklu ${info.cycleDay} z ${cycleData.cycleSettings.averageCycleLengthDays}`;
   document.getElementById('today-summary').textContent = cycleData.shortTodaySummaries[phase];
   document.getElementById('support-line').textContent = support || '';
+}
+
+function populateDetailPanel(date) {
+  const info = getCycleInfo(date);
+  const phase = info.phase;
+  const def = cycleData.phaseDefinitions[phase];
+  const detail = cycleData.detailedTodayContent[phase];
+  const playful = cycleData.playfulLines[phase] && cycleData.playfulLines[phase][0];
 
   document.getElementById('detail-title').textContent = def.displayName;
+  document.getElementById('detail-date').textContent = formatDateCs(date);
   document.getElementById('detail-emotional').textContent = detail.emotionalState;
   document.getElementById('detail-physical').textContent = detail.physicalState;
   document.getElementById('detail-energy').textContent = detail.energy;
@@ -115,13 +129,18 @@ function setupTabs() {
   tabCal.addEventListener('click', () => activate('calendar'));
 }
 
+let openDetailForDate = null;
+
 function setupDetailPanel() {
   const btn = document.getElementById('more-btn');
   const panel = document.getElementById('detail-panel');
   const overlay = document.getElementById('overlay');
   const closeBtn = document.getElementById('close-btn');
+  let lastFocused = null;
 
-  function open() {
+  function open(date) {
+    populateDetailPanel(date);
+    lastFocused = document.activeElement;
     panel.classList.add('is-open');
     overlay.classList.add('is-open');
     panel.setAttribute('aria-hidden', 'false');
@@ -137,7 +156,7 @@ function setupDetailPanel() {
     panel.setAttribute('aria-hidden', 'true');
     btn.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('no-scroll');
-    btn.focus();
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
     document.removeEventListener('keydown', onKeydown);
   }
 
@@ -145,9 +164,11 @@ function setupDetailPanel() {
     if (e.key === 'Escape') close();
   }
 
-  btn.addEventListener('click', open);
+  btn.addEventListener('click', () => open(new Date()));
   closeBtn.addEventListener('click', close);
   overlay.addEventListener('click', close);
+
+  openDetailForDate = open;
 }
 
 function setupCalendarNav() {
@@ -201,16 +222,23 @@ function renderCalendar() {
   for (let d = 1; d <= daysInMonth; d++) {
     const date = new Date(year, month, d);
     const info = getCycleInfo(date);
-    const cell = document.createElement('div');
-    cell.className = 'day-cell';
-    if (info.isPeriodDay) cell.classList.add('is-period');
-    if (info.isOvulationDay) cell.classList.add('is-ovulation');
+    const cell = document.createElement('button');
+    cell.type = 'button';
+    cell.className = `day-cell is-${info.phase}`;
     if (daysBetween(today, date) === 0) cell.classList.add('is-today');
+
+    const def = cycleData.phaseDefinitions[info.phase];
+    cell.setAttribute('aria-label', `${d}. ${MONTH_NAMES_CS[month]} – ${def.displayName}, den cyklu ${info.cycleDay}`);
 
     const number = document.createElement('span');
     number.className = 'day-number';
     number.textContent = String(d);
     cell.appendChild(number);
+
+    cell.addEventListener('click', () => {
+      if (openDetailForDate) openDetailForDate(date);
+    });
+
     grid.appendChild(cell);
   }
 

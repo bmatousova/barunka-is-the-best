@@ -105,7 +105,8 @@ body.no-scroll { overflow: hidden; }
   color: var(--color-text-soft); cursor: pointer; line-height: 1; padding: 4px 8px;
 }
 
-.detail-panel h2 { font-family: var(--font-serif); margin: 0 0 16px; padding-right: 24px; }
+.detail-panel h2 { font-family: var(--font-serif); margin: 0 0 4px; padding-right: 24px; }
+.detail-date { color: var(--color-text-soft); font-size: 0.8rem; margin: 0 0 12px; letter-spacing: 0.03em; }
 
 .detail-list { margin: 0 0 8px; }
 .detail-list dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-soft); margin-top: 14px; }
@@ -126,17 +127,28 @@ body.no-scroll { overflow: hidden; }
 .day-cell {
   aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
   position: relative; font-size: 0.85rem; border-radius: 50%;
+  border: none; background: transparent; color: var(--color-text);
+  font-family: inherit; cursor: pointer; padding: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.day-cell.is-empty { visibility: hidden; }
+.day-cell:hover, .day-cell:focus-visible { transform: scale(1.08); box-shadow: 0 0 0 2px var(--color-dark); outline: none; }
+.day-cell.is-empty { visibility: hidden; cursor: default; }
 .day-cell.is-today .day-number { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.day-cell.is-period { background: var(--color-dark); color: #fff; }
-.day-cell.is-ovulation:not(.is-period) { border: 1.5px solid var(--color-accent); }
 
-.calendar-legend { display: flex; gap: 18px; justify-content: center; margin-top: 20px; font-size: 0.78rem; color: var(--color-text-soft); }
+.day-cell.is-follicular { background: rgba(201, 166, 122, 0.25); }
+.day-cell.is-luteal { background: rgba(43, 38, 34, 0.08); }
+.day-cell.is-ovulation { background: var(--color-accent); color: var(--color-dark); font-weight: 600; }
+.day-cell.is-menstrual { background: var(--color-dark); color: #fff; }
+
+.calendar-hint { font-size: 0.78rem; color: var(--color-text-soft); margin: 16px 0 0; }
+
+.calendar-legend { display: flex; flex-wrap: wrap; gap: 10px 16px; justify-content: center; margin-top: 14px; font-size: 0.74rem; color: var(--color-text-soft); }
 .legend-item { display: inline-flex; align-items: center; gap: 6px; }
 .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-.dot-period { background: var(--color-dark); }
-.dot-ovulation { border: 1.5px solid var(--color-accent); }
+.dot-menstrual { background: var(--color-dark); }
+.dot-follicular { background: rgba(201, 166, 122, 0.5); }
+.dot-ovulation { background: var(--color-accent); }
+.dot-luteal { background: rgba(43, 38, 34, 0.18); }
 
 .data-error { max-width: 440px; margin: 60px auto; text-align: center; padding: 0 24px; color: var(--color-text-soft); font-size: 0.9rem; }
 .data-error.is-hidden { display: none; }
