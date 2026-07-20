@@ -48,6 +48,18 @@ function formatDateCs(date) {
   return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
 }
 
+// Picks one of several hand-written variants of a line, rotating by cycle number
+// so the wording changes cycle to cycle without ever needing manual updates.
+// Falls back gracefully if a field only has a single string.
+function pickVariant(value, seed) {
+  if (Array.isArray(value)) {
+    if (value.length === 0) return '';
+    const idx = ((seed % value.length) + value.length) % value.length;
+    return value[idx];
+  }
+  return value;
+}
+
 function getCycleInfo(date) {
   const anchor = parseAnchorDate(cycleData.anchorDate);
   const cycleLength = cycleData.cycleSettings.averageCycleLengthDays;
@@ -58,7 +70,7 @@ function getCycleInfo(date) {
   const cycleDay = mod + 1; // 1-indexed
 
   const ovulationDay = Math.max(1, cycleLength - 13); // 14 days before next period
-  // Fertile window: the 5 days before ovulation, plus ovulation day itself (6 days total)
+  // Fertile window: the 5 fertile days before ovulation, plus ovulation day itself (6 days total)
   const ovulationWindowStart = Math.max(1, ovulationDay - 5);
   const ovulationWindowEnd = ovulationDay;
 
@@ -71,20 +83,26 @@ function getCycleInfo(date) {
   else if (cycleDay < ovulationWindowStart) phase = 'follicular';
   else phase = 'luteal';
 
-  return { cycleDay, phase, isPeriodDay, isOvulationDay };
+  // Which cycle since the anchor date this date falls in.
+  // Used to rotate between the hand-written text variants so the wording
+  // changes cycle to cycle instead of repeating identically every 28 days.
+  const variantSeed = Math.floor(diff / cycleLength);
+
+  return { cycleDay, phase, isPeriodDay, isOvulationDay, variantSeed };
 }
 
 function renderToday() {
   const info = getCycleInfo(new Date());
   const phase = info.phase;
   const def = cycleData.phaseDefinitions[phase];
-  const support = cycleData.supportNotes[phase] || cycleData.supportNotes[phase][0];
 
   document.getElementById('phase-name').textContent = def.displayName;
   document.getElementById('cycle-day').textContent =
     `Den cyklu ${info.cycleDay} z ${cycleData.cycleSettings.averageCycleLengthDays}`;
-  document.getElementById('today-summary').textContent = cycleData.shortTodaySummaries[phase];
-  document.getElementById('support-line').textContent = support;
+  document.getElementById('today-summary').textContent =
+    pickVariant(cycleData.shortTodaySummaries[phase], info.variantSeed);
+  document.getElementById('support-line').textContent =
+    pickVariant(cycleData.supportNotes[phase], info.variantSeed);
 }
 
 function populateDetailPanel(date) {
@@ -92,15 +110,15 @@ function populateDetailPanel(date) {
   const phase = info.phase;
   const def = cycleData.phaseDefinitions[phase];
   const detail = cycleData.detailedTodayContent[phase];
-  const playful = cycleData.playfulLines[phase] || cycleData.playfulLines[phase][0];
+  const seed = info.variantSeed;
 
   document.getElementById('detail-title').textContent = def.displayName;
   document.getElementById('detail-date').textContent = formatDateCs(date);
-  document.getElementById('detail-emotional').textContent = detail.emotionalState;
-  document.getElementById('detail-physical').textContent = detail.physicalState;
-  document.getElementById('detail-energy').textContent = detail.energy;
+  document.getElementById('detail-emotional').textContent = pickVariant(detail.emotionalState, seed);
+  document.getElementById('detail-physical').textContent = pickVariant(detail.physicalState, seed);
+  document.getElementById('detail-energy').textContent = pickVariant(detail.energy, seed);
   document.getElementById('detail-explanation').textContent = detail.detailedExplanation;
-  document.getElementById('detail-playful').textContent = playful;
+  document.getElementById('detail-playful').textContent = pickVariant(cycleData.playfulLines[phase], seed);
   document.getElementById('disclaimer').textContent = cycleData.disclaimer;
 }
 
