@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Jak mít jednodušší život s Barunkou</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="app-header">
+    <h1 class="app-title">Dnešní Barunka</h1>
+    <p class="app-subtitle">Malý průvodce mnou, pro tebe.</p>
+    <nav class="tabs" role="tablist" aria-label="Zobrazení">
+      <button type="button" class="tab-btn is-active" id="tab-today" role="tab" aria-selected="true" aria-controls="view-today">Dnes</button>
+      <button type="button" class="tab-btn" id="tab-calendar" role="tab" aria-selected="false" aria-controls="view-calendar">Kalendář</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-today" class="view" role="tabpanel" aria-labelledby="tab-today">
+      <div class="today-card">
+        <p class="phase-label" id="phase-name">—</p>
+        <p class="cycle-day" id="cycle-day">—</p>
+        <p class="today-summary" id="today-summary">—</p>
+        <p class="support-line" id="support-line">—</p>
+        <button type="button" class="more-btn" id="more-btn" aria-expanded="false" aria-controls="detail-panel">Zjistit víc</button>
+      </div>
+    </section>
+
+    <section id="view-calendar" class="view is-hidden" role="tabpanel" aria-labelledby="tab-calendar">
+      <div class="calendar-card">
+        <div class="calendar-nav">
+          <button type="button" id="cal-prev" aria-label="Předchozí měsíc">‹</button>
+          <p id="cal-month-label">—</p>
+          <button type="button" id="cal-next" aria-label="Další měsíc">›</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+        <div class="calendar-legend">
+          <span class="legend-item"><span class="dot dot-period"></span>Menstruace</span>
+          <span class="legend-item"><span class="dot dot-ovulation"></span>Plodné dny</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <p class="data-error is-hidden" id="data-error">
+    Obsah se nepodařilo načíst. Pokud si tenhle soubor prohlížíš přímo v počítači (dvojklikem na index.html), prohlížeč z bezpečnostních důvodů blokuje načtení dat ze souboru. Nahraj stránku na GitHub Pages podle README a bude fungovat normálně.
+  </p>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="detail-panel" id="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title" aria-hidden="true">
+  <button type="button" class="close-btn" id="close-btn" aria-label="Zavřít">×</button>
+  <h2 id="detail-title">—</h2>
+  <dl class="detail-list">
+    <dt>Emoce</dt>
+    <dd id="detail-emotional">—</dd>
+    <dt>Tělo</dt>
+    <dd id="detail-physical">—</dd>
+    <dt>Energie</dt>
+    <dd id="detail-energy">—</dd>
+  </dl>
+  <p class="detail-explanation" id="detail-explanation">—</p>
+  <p class="playful-line" id="detail-playful">—</p>
+  <p class="disclaimer" id="disclaimer">—</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

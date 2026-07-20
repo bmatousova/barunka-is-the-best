@@ -1,0 +1,159 @@
+:root {
+  --color-bg: #f3ece1;
+  --color-card: #fffdfa;
+  --color-text: #2b2622;
+  --color-text-soft: #6b6259;
+  --color-accent: #c9b79c;
+  --color-dark: #2b2622;
+  --font-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.no-scroll { overflow: hidden; }
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 32px 20px 64px;
+}
+
+.app-header { text-align: center; margin-bottom: 28px; }
+.app-title { font-family: var(--font-serif); font-size: 1.6rem; margin: 0 0 4px; font-weight: 600; }
+.app-subtitle { color: var(--color-text-soft); margin: 0 0 20px; font-size: 0.95rem; }
+
+.tabs { display: inline-flex; background: var(--color-card); border-radius: 999px; padding: 4px; gap: 4px; }
+.tab-btn {
+  border: none; background: transparent; padding: 8px 20px; border-radius: 999px;
+  font-size: 0.9rem; color: var(--color-text-soft); cursor: pointer; font-family: inherit;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.tab-btn.is-active { background: var(--color-dark); color: #fff; }
+
+.view.is-hidden { display: none; }
+
+.today-card, .calendar-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: 0 8px 30px rgba(43, 38, 34, 0.06);
+  text-align: center;
+}
+
+.phase-label { font-family: var(--font-serif); font-size: 1.4rem; margin: 0 0 4px; }
+.cycle-day { color: var(--color-text-soft); font-size: 0.85rem; margin: 0 0 20px; letter-spacing: 0.03em; text-transform: uppercase; }
+.today-summary { font-size: 1.05rem; margin: 0 0 12px; }
+.support-line { color: var(--color-text-soft); font-size: 0.95rem; margin: 0 0 24px; font-style: italic; }
+
+.more-btn {
+  border: 1px solid var(--color-dark);
+  background: transparent;
+  color: var(--color-dark);
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.more-btn:hover, .more-btn:focus-visible { background: var(--color-dark); color: #fff; }
+
+/* Overlay + detail drawer/modal */
+.overlay {
+  position: fixed; inset: 0; background: rgba(43, 38, 34, 0.35);
+  opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+  z-index: 10;
+}
+.overlay.is-open { opacity: 1; pointer-events: auto; }
+
+.detail-panel {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: var(--color-card);
+  border-radius: 24px 24px 0 0;
+  padding: 28px 24px 36px;
+  max-height: 82vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
+  z-index: 11;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.detail-panel.is-open {
+  transform: translateY(0);
+  visibility: visible;
+  transition: transform 0.3s ease, visibility 0s linear 0s;
+}
+
+.close-btn {
+  position: absolute; top: 16px; right: 20px;
+  border: none; background: transparent; font-size: 1.5rem;
+  color: var(--color-text-soft); cursor: pointer; line-height: 1; padding: 4px 8px;
+}
+
+.detail-panel h2 { font-family: var(--font-serif); margin: 0 0 16px; padding-right: 24px; }
+
+.detail-list { margin: 0 0 8px; }
+.detail-list dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-soft); margin-top: 14px; }
+.detail-list dd { margin: 4px 0 0; font-size: 0.98rem; }
+
+.detail-explanation { font-size: 0.95rem; margin: 20px 0 16px; }
+.playful-line { font-style: italic; color: var(--color-text-soft); margin: 0 0 20px; }
+.disclaimer { font-size: 0.78rem; color: var(--color-text-soft); border-top: 1px solid rgba(43, 38, 34, 0.1); padding-top: 14px; }
+
+/* Calendar */
+.calendar-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.calendar-nav button { border: none; background: transparent; font-size: 1.4rem; color: var(--color-text); cursor: pointer; padding: 4px 12px; }
+.calendar-nav button:disabled { opacity: 0.25; cursor: default; }
+#cal-month-label { font-family: var(--font-serif); font-size: 1.1rem; margin: 0; text-transform: capitalize; }
+
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.day-name { font-size: 0.68rem; text-align: center; color: var(--color-text-soft); padding-bottom: 6px; }
+.day-cell {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  position: relative; font-size: 0.85rem; border-radius: 50%;
+}
+.day-cell.is-empty { visibility: hidden; }
+.day-cell.is-today .day-number { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.day-cell.is-period { background: var(--color-dark); color: #fff; }
+.day-cell.is-ovulation:not(.is-period) { border: 1.5px solid var(--color-accent); }
+
+.calendar-legend { display: flex; gap: 18px; justify-content: center; margin-top: 20px; font-size: 0.78rem; color: var(--color-text-soft); }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot-period { background: var(--color-dark); }
+.dot-ovulation { border: 1.5px solid var(--color-accent); }
+
+.data-error { max-width: 440px; margin: 60px auto; text-align: center; padding: 0 24px; color: var(--color-text-soft); font-size: 0.9rem; }
+.data-error.is-hidden { display: none; }
+
+@media (min-width: 640px) {
+  .detail-panel {
+    left: 50%; right: auto; bottom: auto; top: 50%;
+    transform: translate(-50%, -46%) scale(0.96);
+    opacity: 0;
+    width: 100%; max-width: 440px;
+    border-radius: 24px;
+    max-height: 80vh;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s linear 0.25s;
+  }
+  .detail-panel.is-open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s linear 0s;
+  }
+}
