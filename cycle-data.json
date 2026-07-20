@@ -1,7 +1,6 @@
 {
-  "appName": "Jak mít jednodušší život s Barunkou",
-  "shortTitle": "Dnešní Barunka",
-  "appSubtitle": "Jak si užít den ve všech fázích své ženy",
+  "appName": "Jak mít jednodušší život s Barunkou a nezbláznit se z jejích nálad",
+  "shortTitle": "Jak se dnes Barunka cítí?",
   "language": "cs",
 
   "cycleSettings": {
@@ -23,52 +22,52 @@
   },
 
   "shortTodaySummaries": {
-    "menstrual": "Dnes to nejspíš nemá lehké, hlavně první dny – buď trpělivý a hodný.",
-    "follicular": "Energie se jí vrací – skvělý den navrhnout něco nového, ven, nebo rovnou rande.",
-    "ovulation": "Tohle je její vrcholná forma – sebevědomá, hřejivá, plná energie. Užij si to.",
-    "luteal": "Dnes to na ni asi bude sedat víc než obvykle – jdi na ni v klidu, trpělivost dnes vyhrává."
+    "menstrual": "Ajaj, je to tady. Být tebou, udělala bych snídani do postele a zdržela se nevhodných komentářů....",
+    "follicular": "Teď te čaká skvělý týden a půl - využiij toho. Vytáhni mě na procházku, na matchu do Daydreameru nebo si udělejme večeři při svíčkách. Už bych (snad) neměla být tak protivná hihi.",
+    "ovulation": "Tohle je tvoje šance vytřískat ze mě to nejlepší. Toto je peak ze všech peaků. Cítím se jako nepřemožitelná žena, která dokáže všechno.",
+    "luteal": "Tady bych být tebou šla do prdele (slušně řečeno..). Budu hodně papat, ronit slzy, stěžovat si na svou nafouklou postavu a jestli bude špatné počasí...budeš nejspíš týden ležet na gauči."
   },
 
   "detailedTodayContent": {
     "menstrual": {
-      "emotionalState": "Bývá citlivější než obvykle – i maličkosti ji dokážou zasáhnout víc, i když si o útěchu sama neřekne.",
-      "physicalState": "První dva dny bývají na tělo nejtěžší – křeče, únava, prostě není ve své kůži.",
-      "energy": "Nízká, hlavně první dva dny – nečekej od ní žádné výkony.",
-      "detailedExplanation": "Na začátku menstruace jí rychle klesnou hormony a tělo maká naplno. První dva dny bývají nejtěžší – tehdy má nejmíň trpělivosti a nejvíc potřebuje péči, ne řešení problémů. Buď prostě nablízku, i beze slov."
+      "emotionalState": "Jak se asi můžu cítit, když mi z těla vychází x litrů krve a jakoby mi někdo bodal do břicha.",
+      "physicalState": "První dva dny jsou nejhroší. Pak už na mě klidně můžeš začít mluvit.",
+      "energy": "Kdyby existovala pouze postel, byla bych nejštastnější na světe.",
+      "detailedExplanation": "Pokud vajíčko nebylo oplodněné, hladiny estrogenu a progesteronu klesnou, děložní sliznice už není potřeba, takže se její horní vrstva odloučí a vyjde ven jako menstruační krvácení. Křeče při menstruaci jsou způsobené stahy svaloviny dělohy, která se snaží sliznici „vytlačit ven“, zároveň se může měnit chemie v těle, což ovlivňuje energii, náladu, citlivost na bolest nebo spánek.."
     },
     "follicular": {
-      "emotionalState": "Bývá naladěná pozitivně a v pohodě, i když to den ode dne trochu kolísá.",
-      "physicalState": "Většinou žádné výrazné potíže – tělo ji nechává na pokoji.",
-      "energy": "Postupně stoupá – dobrá chvíle na aktivity a plány.",
-      "detailedExplanation": "Jak jí stoupají hormony, obvykle stoupá i nálada a energie. Není to každý měsíc stejné, ale obecně je tohle fáze, kdy je zase nejvíc sama sebou. Ideální čas navrhnout výlet, rande nebo něco aktivního – nejspíš do toho půjde ráda."
+      "emotionalState": "Obecně se mám asi fajn, tak mě moc neser.",
+      "physicalState": "Jo tady se nic zvláštního neděje.",
+      "energy": "Stoupá a lepší se, takže super timing na plánování maratonů, hyroxů a spartanů.",
+      "detailedExplanation": "Když začne krvácení, hypofýza zvyšuje pohlavní hormon, ten stimuluje ve vaječníku folikuly (váčky s vajíčky) k dozrávání a k produkci estrogenu, který v těle postupně roste. Estrogen způsobí, že děložní sliznice znovu narůstá a „zjemňuje se“, aby byla připravená přijmout případné oplodněné vajíčko, zároveň vyšší estrogen často souvisí s lepší náladou, vyšší energií a větší sociální a sexuální motivací.."
     },
     "ovulation": {
-      "emotionalState": "Cítí se jako nejlepší verze sebe sama – sebevědomá, ženská, zářivá.",
-      "physicalState": "Tohle bývá chvíle, kdy nejvíc touží po blízkosti – využij toho.",
-      "energy": "Na vrcholu, hlavně ke konci téhle fáze.",
-      "detailedExplanation": "Její tělo je na hormonálním vrcholu a je to znát – je sebevědomější, má víc energie a víc touží po intimitě než v ostatních fázích. Pokud si všimneš, že je kolem téhle doby iniciativnější, není to náhoda – jen jí to vrať."
+      "emotionalState": "Miluju sebe, tebe a všechno ostatní.",
+      "physicalState": "Chci sex, pracovat, sportovat, bavit se, zkoušt nový věci, poznávat nový lidi, dostávat kytky, chodit rande.",
+      "energy": "Však je to asi jasný.",
+      "detailedExplanation": "Jak estrogen vystoupá na vysokou hladinu, otočí se zpětná vazba v mozku z negativní na pozitivní, hypofýza uvolní prudký luteinizační hormon, který spustí ovulaci, tedy prasknutí dominantního folikulu a uvolnění vajíčka z vaječníku. Vajíčko se dostane do vejcovodu a několik hodin až dní je připravené být oplodněné spermií, zatímco tělo krátce funguje v módu maximální plodnosti, což se může projevit změnou hlenu v pochvě, zvýšeným libidem a někdy i lehkou bolestí v podbřišku."
     },
     "luteal": {
-      "emotionalState": "Bývá podrážděná, sklíčená, brečí snáz – a pokud jste si v předchozích dnech nebyli moc blízcí, dopadá to na ni obvykle ještě víc.",
-      "physicalState": "Bývá víc unavená, víc hladová, a nejspíš se nebude mít ráda ve vlastní kůži. Nic z toho není o tobě.",
-      "energy": "Nižší – potřebuje víc spánku a odpočinku, než si sama přizná.",
-      "detailedExplanation": "Pár dní před menstruací jí klesají hormony a přináší to podrážděnost, horší náladu a sebekritiku – v týhle fázi nejčastěji brečí nebo má pocit, že nesnáší úplně všechno, bez jasného důvodu. Blízkost dřív v cyklu jí tuhle fázi obvykle zjemní, ale když už přijde, nejvíc pomůže, když zůstaneš klidný, nebereš si to osobně a necháš jí prostor, když o něj řekne – aniž bys úplně zmizel."
+      "emotionalState": "Tak a tohle je opravdu špatná doba, kterou nezávidím ani tobě ani sobě, bohužel je to ještě horší než samotná menstruace.",
+      "physicalState": "Mám chuť na všechno co existuje i neexistuje, brečim - často! Nelíbím se sama sobě, nechchi slyšet tvoje vtipy and businessové plány, protože teď zrovna nejsem ve stavu dobývání světa..a takový malý tip - jestli jsme sexy time tenhle měsíc ještě neměli, tak tohle je naše poslední šance, jinak se dostávám do velké nepohody ups.",
+      "energy": "Na rozdávání ji úplně nemám.",
+      "detailedExplanation": "Po ovulaci se z prasklého folikulu stane žluté tělísko, které produkuje hlavně progesteron, ten zahušťuje a stabilizuje sliznici dělohy, tlumí další zrání vajíček a vytváří prostředí pro případné uhnízdění embrya. Pokud k oplodnění nedojde, žluté tělísko zaniká, progesteron a estrogen klesají, cévy ve sliznici se zavírají a tkáň začne odumírat, což spustí další menstruaci; kolísání hormonů v této fázi je hlavním důvodem PMS symptomů jako výkyvy nálady, nafouknutí, únava nebo změny chuti k jídlu."
     }
   },
 
   "supportNotes": {
-    "menstrual": ["Buď trpělivý, hodný a pomocný – dnes to zmůže víc, než čekáš."],
-    "follicular": ["Klidně navrhni něco nového nebo aktivního – nejspíš do toho půjde ráda."],
-    "ovulation": ["Nejspíš touží po blízkosti – nebraň se tomu."],
-    "luteal": ["Když si řekne o prostor, dej jí ho – ale zůstaň vřelý a neodtahuj se. Tohle přejde."]
+    "menstrual": ["Utrhni mi venku kytičku."],
+    "follicular": ["Kup mi kytičku."],
+    "ovulation": ["Daruj mi kytičku."],
+    "luteal": ["Kytičkou mi uděláš radost."]
   },
 
   "playfulLines": {
-    "menstrual": ["I když bude připomínat naštvaného ježka, pod tím je to pořád tvoje holka. Objetí funguje líp než slova. (uprav podle sebe – to customize later)"],
-    "follicular": ["Tohle je verze, co řekne ano skoro na cokoliv – teď je ten správný čas na tvoje šílené nápady. (uprav podle sebe – to customize later)"],
-    "ovulation": ["Tohle je týden, kdy je nejvíc jistá, že si tě vybrala dobře. Klidně jí to potvrď. (uprav podle sebe – to customize later)"],
-    "luteal": ["I v náladě, kdy nesnáší úplně všechno, tě má pořád ráda – jen to teď možná neumí dobře ukázat. Trpělivost se vyplatí. (uprav podle sebe – to customize later)"]
+    "menstrual": ["Obejmi mi mě a bude dobře"],
+    "follicular": ["Tohle je verze, co řekne ano skoro na cokoliv. Vezmi svoje šílený nápady a pusťmě se do nich."],
+    "ovulation": ["Však víš co dělat.."],
+    "luteal": ["I když budu připomínat naštvaného dinosaura, tak tě mám ráda i tak"]
   },
 
-  "disclaimer": "Tohle je pravděpodobný odhad na základě zadaných informací, ne jistota – každý cyklus může být trochu jiný."
+  "disclaimer": "Hehehe ale pořád jsem jen žena a tohle všechno může být úplně jinak."
 }
