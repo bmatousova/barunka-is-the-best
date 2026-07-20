@@ -61,7 +61,7 @@
         "Neni. Vstala jsem jen proto, abych ti tohle napsala.",
         "Zzzzzzzzz."
       ],
-      "detailedExplanation": "Pokud vajíčko nebylo oplodněné, hladiny estrogenu a progesteronu klesnou, děložní sliznice už není potřeba, takže se její horní vrstva odloučí a vyjde ven jako menstruační krvácení. Křeče při menstruaci jsou způsobené stahy svaloviny dělohy, která se snaží sliznici „vytlačit ven“, zároveň se může měnit chemie v těle, což ovlivňuje energii, náladu, citlivost na bolest nebo spánek."
+      "detailedExplanation": "Pokud vajíčko nebylo oplodněné, hladiny estrogenu a progesteronu klesnou, děložní sliznice už není potřeba, takže se její horní vrstva odloučí a vyjde ven jako menstruační krvácení. Křeče při menstruaci jsou způsobené stahy svaloviny dělohy, která se snaží sliznici \"vytlačit ven\", zároveň se může měnit chemie v těle, což ovlivňuje energii, náladu, citlivost na bolest nebo spánek."
     },
     "follicular": {
       "emotionalState": [
@@ -79,7 +79,7 @@
         "Klidně mě zkus i unavit, uvidíme, kdo vydrží dýl.",
         "Pojďme si zaběhat..tentokrát by to mohlo být bez odmlouvání."
       ],
-      "detailedExplanation": "Když začne krvácení, hypofýza zvyšuje pohlavní hormon, ten stimuluje ve vaječníku folikuly (váčky s vajíčky) k dozrávání a k produkci estrogenu, který v těle postupně roste. Estrogen způsobí, že děložní sliznice znovu narůstá a „zjemňuje se“, aby byla připravená přijmout případné oplodněné vajíčko, zároveň vyšší estrogen často souvisí s lepší náladou, vyšší energií a větší sociální a sexuální motivací."
+      "detailedExplanation": "Když začne krvácení, hypofýza zvyšuje pohlavní hormon, ten stimuluje ve vaječníku folikuly (váčky s vajíčky) k dozrávání a k produkci estrogenu, který v těle postupně roste. Estrogen způsobí, že děložní sliznice znovu narůstá a \"zjemňuje se\", aby byla připravená přijmout případné oplodněné vajíčko, zároveň vyšší estrogen často souvisí s lepší náladou, vyšší energií a větší sociální a sexuální motivací."
     },
     "ovulation": {
       "emotionalState": [
@@ -121,16 +121,16 @@
 
   "supportNotes": {
     "menstrual": [
-      "Utrhni mi venku kytičku a dopřej mi hromadu čokolády.",
+      "Utrhni mi venku kytičku a dopřej mi hromadu čokolády."
     ],
     "follicular": [
-      "Daruj mi kytičku a vytáhni mě na procházku.",
+      "Daruj mi kytičku a vytáhni mě na procházku."
     ],
     "ovulation": [
-      "Kup mi kytičku a miluj mě.",
+      "Kup mi kytičku a miluj mě."
     ],
     "luteal": [
-      "Kytičkou mi uděláš radost a to stačí.",
+      "Kytičkou mi uděláš radost a to stačí."
     ]
   },
 
