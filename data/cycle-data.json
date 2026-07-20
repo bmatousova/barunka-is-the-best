@@ -1,58 +1,65 @@
 {
-      "anchorDate": "2026-06-24",
+  "appName": "Jak mít jednodušší život s Barunkou",
+  "shortTitle": "Dnešní Barunka",
+  "appSubtitle": "Jak si užít den ve všech fázích své ženy",
+  "language": "cs",
   "cycleSettings": {
     "averageCycleLengthDays": 28,
-    "averagePeriodLengthDays": 5
+    "averagePeriodLengthDays": 6,
+    "cyclesAreRegular": true,
+    "showPredictions": true
   },
+  "anchorDate": "2026-06-24",
+  "phaseOrder": ["menstrual", "follicular", "ovulation", "luteal"],
   "phaseDefinitions": {
     "menstrual": { "displayName": "Menstruace" },
     "follicular": { "displayName": "Folikulární fáze" },
     "ovulation": { "displayName": "Ovulace" },
     "luteal": { "displayName": "Luteální fáze" }
   },
+  "shortTodaySummaries": {
+    "menstrual": "Dnes to nejspíš nemá lehké, hlavně první dny – buď trpělivý a hodný.",
+    "follicular": "Energie se jí vrací – skvlý den navrhnout něco nového, venční, nebo rovnou rande.",
+    "ovulation": "Tohle je její vrcholná forma – sebevědomá, hřejivá, plná energie. Užij si to.",
+    "luteal": "Dnes to na ni asi bude sedat víc než obvykle – jdi na ni v klidu, trpělivost dnes vyhrává."
+  },
   "detailedTodayContent": {
     "menstrual": {
-      "emotionalState": "Klidná, introvertní, potřebuješ víc prostoru.",
-      "physicalState": "Tělo se regeneruje, možné křeče nebo únava.",
-      "energy": "Nízká — ideální čas na odpočinek a pomalé tempo.",
-      "detailedExplanation": "Během menstruace tělo odvádí skvělou práci — vyžaduje klid a péči. Vyhni se velkým rozhodnutím a dopřej si odpočinek."
+      "emotionalState": "Bývá citlivější než obvykle – i maličkosti ji doknou zashnout víc, i když si o péči sama neřekne.",
+      "physicalState": "První dva dny bývají na tělo nejtěžší – křeče, únava, prostě není ve své kůži.",
+      "energy": "Nízká, hlavně první dva dny – neočekávej od ní žádné výkony.",
+      "detailedExplanation": "Na začátku menstruace jí rychle klesnou hormony a tělo maká naplno. První dva dny bývají nejtěžší – tehdy má nejméň trpělivosti a nejvíc potřebuje péči, ne řešení problémů. Buď prostě nablzku, i beze slov."
     },
     "follicular": {
-      "emotionalState": "Optimistická, zvědavá, otevřená novým věcem.",
-      "physicalState": "Energie roste, tělo je připravené na aktivitu.",
-      "energy": "Stoupající — skvělý čas začít nové projekty.",
-      "detailedExplanation": "Estrogen stoupá a ty s ním. Mozek pracuje rychleji, kreativita je na vzestupu. Využij to!"
+      "emotionalState": "Bývá naladená pozitivně a v pohodě, i když to den ode dne trochu kolíší.",
+      "physicalState": "Většinou žádné výrazné potíže – tělo ji nechává na pokoji.",
+      "energy": "Postupně stoupá – dobrá chvíle na aktivity a plány.",
+      "detailedExplanation": "Jak jí stoupají hormony, obvykle stoupá i nálada a energie. Není to každý měsíc stejné, ale obecně je tohle fáze, kdy je zase nejvíc sama sebou. Ideální čas navrhnout výlet, rande nebo něco aktivního – nejspíš do toho půjde ráda."
     },
     "ovulation": {
-      "emotionalState": "Společenská, sebevědomá, výřečná.",
-      "physicalState": "Na vrcholu fyzické kondice, plná energie.",
-      "energy": "Vysoká — ideální na důležité schůzky nebo sport.",
-      "detailedExplanation": "Jsi na vrcholu cyklu. Komunikace jde snadno, cítíš se atraktivně a sebejistě. Nejlepší čas na důležité rozhovory."
+      "emotionalState": "Cítí se jako nejlepší verze sebe sama – sebevědomá, ženská, živá.",
+      "physicalState": "Tohle bývá chvíle, kdy nejvíc touží po blízkosti – využij toho.",
+      "energy": "Na vrcholu, hlavně ke konci této fáze.",
+      "detailedExplanation": "Její tělo je na hormonálním vrcholu a je to znát – je sebevědomější, má víc energie a víc touží po intimitě než v ostatních fázích. Pokud si všimneš, že je kolem této doby iniciativnější, není to náhoda – jen jí tělo vrácí dluhy."
     },
     "luteal": {
-      "emotionalState": "Analytická, citlivější, potřebuješ víc klidu.",
-      "physicalState": "Může se dostavit únava nebo napětí.",
-      "energy": "Klesající — zaměř se na dokončování úkolů, ne na nové starty.",
-      "detailedExplanation": "Progesteron dominuje a tělo se připravuje. Buď k sobě laskavá — emoce jsou intenzivnější a to je normální."
+      "emotionalState": "Bývá podrážděná, sklená, bere věci snáz – a pokud jste si v předchozích dnech nebyli moc blízcí, dopadá to na ni obvykle ještě víc.",
+      "physicalState": "Bývá víc unavená, víc hladová, a nejspíš se nebude mít ráda ve vlastní kůži. Nic z toho není o tobě.",
+      "energy": "Nižší – potřebuje víc spánku a odpočinku, než si sama přizná.",
+      "detailedExplanation": "Pár dní před menstruací jí klesají hormony a pináší to podrážděnost, horší náladu a sebekritiku – v této fázi nejčastěji bere nebo má pocit, že nesnáší plně všechno, bez jasného důvodu. Blzkost dvá v cyklu jí tuto fázi obvykle zmírní, ale když už přijde, nejvíc pomůže, když zůstaneš klidný, nebereš si to osobně a necháš jí prostor, když o něj popožádá – ani bys plně nezmizel."
     }
   },
   "supportNotes": {
-    "menstrual": ["Připrav jí teplý čaj nebo kakao. Netlač na aktivity — tohle je čas na pohodu doma."],
-    "follicular": ["Navrhni společný výlet nebo novou aktivitu — je otevřená dobrodružství."],
-    "ovulation": ["Perfektní čas na rande nebo důležitý rozhovor. Bude zářit."],
-    "luteal": ["Buď trpělivý/á. Možná bude potřebovat víc ujištění nebo ticha. Malá gesta hodně znamenají."]
+    "menstrual": "Buď trpělivý, hodný a pomocný – dnes to zmůže víc, než čekáš.",
+    "follicular": "Klidně navrhni něco nového nebo aktivního – nejspíš do toho půjde ráda.",
+    "ovulation": "Nejspíš touží po blízkosti – nebraň se tomu.",
+    "luteal": "Když si řekne o prostor, dej jí ho – ale zůstaň vlídny a neodtahuj se. Tohle přejde."
   },
   "playfulLines": {
-    "menstrual": ["Dnes je Barunka v režimu 'deka + seriál'. Respektuj prosím."],
-    "follicular": ["Barunka je dnes plná nápadů — pozor, může tě strhnout do nějakého projektu!"],
-    "ovulation": ["Dnes je Barunka na vrcholu. Zkrátka — wow."],
-    "luteal": ["Dnes Barunka cítí víc. To není slabost — to je superschopnost."]
+    "menstrual": "I když bude připomínat natvaného ježek, pod tím vším je to pořád tvoje holka. Objetí funguje lép než slova. (uprav podle sebe – to customize later)",
+    "follicular": "Tohle je verze, co řekne ano skoro na cokoliv – teď je ten správný čas na tvoje šíené nápady. (uprav podle sebe – to customize later)",
+    "ovulation": "Tohle je týden, kdy je nejvíc jistá, že si tě vybrala dobře. Klidně jí to potvrdiš. (uprav podle sebe – to customize later)",
+    "luteal": "I v náladě, kdy nesnáší plně všechno, tě má pořád ráda – jen to teď moná neumí dobře ukázat. Trpělivost se vyplatí. (uprav podle sebe – to customize later)"
   },
-  "shortTodaySummaries": {
-    "menstrual": "Čas na klid a regeneraci.",
-    "follicular": "Energie roste, nápady přicházejí.",
-    "ovulation": "Vrchol cyklu — plná energie a sebedůvěry.",
-    "luteal": "Čas zpomalit a dokončit rozdělanou práci."
-  },
-  "disclaimer": "Tato stránka slouží pouze jako orientační průvodce a není lékařskou radou. Každý cyklus je jedinečný."
+  "disclaimer": "Tohle je pravděpodobný odhad na základě zadaných informací, ne jistota – každý cyklus může být trochu jiný."
 }
