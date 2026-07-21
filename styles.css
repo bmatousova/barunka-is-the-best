@@ -83,15 +83,16 @@ body.no-scroll { overflow: hidden; }
   left: 0; right: 0; bottom: 0;
   background: var(--color-card);
   border-radius: 24px 24px 0 0;
-  padding: 28px 24px 36px;
   max-height: 82vh;
-  overflow-y: auto;
+  overflow: hidden;
   transform: translateY(100%);
   visibility: hidden;
   transition: transform 0.3s ease, visibility 0s linear 0.3s;
   z-index: 11;
   max-width: 480px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 .detail-panel.is-open {
   transform: translateY(0);
@@ -99,14 +100,32 @@ body.no-scroll { overflow: hidden; }
   transition: transform 0.3s ease, visibility 0s linear 0s;
 }
 
-.close-btn {
-  position: absolute; top: 16px; right: 20px;
-  border: none; background: transparent; font-size: 1.5rem;
-  color: var(--color-text-soft); cursor: pointer; line-height: 1; padding: 4px 8px;
+/* Header stays put; only the body below scrolls. This keeps the close
+   button reachable even when a phase's text is long enough to scroll. */
+.detail-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 24px 24px 0;
+  flex-shrink: 0;
 }
 
-.detail-panel h2 { font-family: var(--font-serif); margin: 0 0 4px; padding-right: 24px; }
-.detail-date { color: var(--color-text-soft); font-size: 0.8rem; margin: 0 0 12px; letter-spacing: 0.03em; }
+.detail-panel-body {
+  overflow-y: auto;
+  min-height: 0;
+  padding: 0 24px 36px;
+}
+
+.close-btn {
+  border: none; background: transparent; font-size: 1.5rem;
+  color: var(--color-text-soft); cursor: pointer; line-height: 1; padding: 4px 8px;
+  margin: -4px -8px 0 0;
+  flex-shrink: 0;
+}
+
+.detail-panel h2 { font-family: var(--font-serif); margin: 0; }
+.detail-date { color: var(--color-text-soft); font-size: 0.8rem; margin: 4px 0 12px; letter-spacing: 0.03em; }
 
 .detail-list { margin: 0 0 8px; }
 .detail-list dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-soft); margin-top: 14px; }
