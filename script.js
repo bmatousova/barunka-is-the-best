@@ -17,7 +17,7 @@ async function init() {
     return;
   }
 
-  
+
   setupTabs();
   setupDetailPanel();
   renderToday();
@@ -87,10 +87,10 @@ function getCycleInfo(date) {
     phase = 'luteal';
   }
 
-  // Which cycle (since the anchor date) this date falls in. Used to rotate
-  // between the hand-written text variants so the wording changes cycle to
-  // cycle instead of repeating identically every ~28 days.
-  const variantSeed = Math.floor(diff / cycleLength);
+  // Days since the anchor date. Used to rotate between the hand-written text
+  // variants so the wording changes every single day (never repeating on two
+  // consecutive days), not just once per ~28-day cycle.
+  const variantSeed = diff;
 
   return { cycleDay, phase, isPeriodDay, isOvulationDay, variantSeed };
 }
@@ -122,7 +122,7 @@ function populateDetailPanel(date) {
   document.getElementById('detail-physical').textContent = pickVariant(detail.physicalState, seed);
   document.getElementById('detail-energy').textContent = pickVariant(detail.energy, seed);
   document.getElementById('detail-explanation').textContent = detail.detailedExplanation;
-  document.getElementById('detail-playful').textContent = pickVariant(cycleData.playfulLines[phase], seed);
+  document.getElementById('playful-line').textContent = pickVariant(cycleData.playfulLines[phase], seed);
   document.getElementById('disclaimer').textContent = cycleData.disclaimer;
 }
 
