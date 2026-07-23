@@ -61,7 +61,8 @@
         "Není...",
         "Zzzzzzzzz."
       ],
-      "detailedExplanation": "Pokud vajíčko nebylo oplodněné, hladiny estrogenu a progesteronu klesnou, děložní sliznice už není potřeba, takže se její horní vrstva odloučí a vyjde ven jako menstruační krvácení. Křeče při menstruaci jsou způsobené stahy svaloviny dělohy, která se snaží sliznici \"vytlačit ven\", zároveň se může měnit chemie v těle, což ovlivňuje energii, náladu, citlivost na bolest nebo spánek."
+      "detailedExplanation": "Pokud vajíčko nebylo oplodněné, hladiny estrogenu a progesteronu klesnou, děložní sliznice už není potřeba, takže se její horní vrstva odloučí a vyjde ven jako menstruační krvácení. Křeče při menstruaci jsou způsobené stahy svaloviny dělohy, která se snaží sliznici \"vytlačit ven\", zároveň se může měnit chemie v těle, což ovlivňuje energii, náladu, citlivost na bolest nebo spánek.",
+      "contraceptionExplanation": "Při hormonální antikoncepci není většina krvácení klasická menstruace, ale tzv. krvácení z vysazení, které vzniká po poklesu hladin syntetického estrogenu a progestinu v pauze nebo při placebo tabletách. Pokles hormonů vede k odlučování části děložní sliznice, která byla během užívání tablet udržována v tenčím a stabilnějším stavu. Kontrakce děložní svaloviny při vypuzování této sliznice mohou vyvolávat křeče a současně se mění neuroendokrinní rovnováha, což ovlivňuje vnímání bolesti, únavu, náladu i spánek."
     },
     "follicular": {
       "emotionalState": [
@@ -78,7 +79,8 @@
         "Klidně mě zkus i unavit, uvidíme, kdo vydrží dýl.",
         "Pojďme si zaběhat..tentokrát by to mohlo být bez odmlouvání."
       ],
-      "detailedExplanation": "Když začne krvácení, hypofýza zvyšuje pohlavní hormon, ten stimuluje ve vaječníku folikuly (váčky s vajíčky) k dozrávání a k produkci estrogenu, který v těle postupně roste. Estrogen způsobí, že děložní sliznice znovu narůstá a \"zjemňuje se\", aby byla připravená přijmout případné oplodněné vajíčko, zároveň vyšší estrogen často souvisí s lepší náladou, vyšší energií a větší sociální a sexuální motivací."
+      "detailedExplanation": "Když začne krvácení, hypofýza zvyšuje pohlavní hormon, ten stimuluje ve vaječníku folikuly (váčky s vajíčky) k dozrávání a k produkci estrogenu, který v těle postupně roste. Estrogen způsobí, že děložní sliznice znovu narůstá a \"zjemňuje se\", aby byla připravená přijmout případné oplodněné vajíčko, zároveň vyšší estrogen často souvisí s lepší náladou, vyšší energií a větší sociální a sexuální motivací.",
+      "contraceptionExplanation": "Hormonální antikoncepce tlumí aktivitu vaječníků prostřednictvím negativní zpětné vazby na hypotalamus a hypofýzu, čímž snižuje sekreci FSH a LH a brání dozrání dominantního folikulu. V důsledku toho neprobíhá klasická folikulární fáze jako ve spontánním cyklu; vaječníky jsou udržovány v \"klidovém\" režimu a endometrium zůstává tenčí a méně cyklicky proměnlivé. Subjektivní změny energie nebo libida v tomto období souvisejí spíše se stabilní expozicí syntetickým hormonům a celkovým stavem organismu."
     },
     "ovulation": {
       "emotionalState": [
@@ -96,7 +98,8 @@
         "Chci dělat všechno na co stačím.",
         "Jedemeeeee bombyyyyyyy aaaaaarrh."
       ],
-      "detailedExplanation": "Jak estrogen vystoupá na vysokou hladinu, otočí se zpětná vazba v mozku z negativní na pozitivní, hypofýza uvolní prudký luteinizační hormon, který spustí ovulaci, tedy prasknutí dominantního folikulu a uvolnění vajíčka z vaječníku. Vajíčko se dostane do vejcovodu a několik hodin až dní je připravené být oplodněné spermií, zatímco tělo krátce funguje v módu maximální plodnosti, což se může projevit změnou hlenu v pochvě, zvýšeným libidem a někdy i lehkou bolestí v podbřišku."
+      "detailedExplanation": "Jak estrogen vystoupá na vysokou hladinu, otočí se zpětná vazba v mozku z negativní na pozitivní, hypofýza uvolní prudký luteinizační hormon, který spustí ovulaci, tedy prasknutí dominantního folikulu a uvolnění vajíčka z vaječníku. Vajíčko se dostane do vejcovodu a několik hodin až dní je připravené být oplodněné spermií, zatímco tělo krátce funguje v módu maximální plodnosti, což se může projevit změnou hlenu v pochvě, zvýšeným libidem a někdy i lehkou bolestí v podbřišku.",
+      "contraceptionExplanation": "Při užívání hormonální antikoncepce je ovulace většinou potlačena, protože progestin brání midcyklickému vzestupu LH nezbytnému pro uvolnění vajíčka. Klasická ovulační fáze se proto typicky nevyskytuje a případné subjektivní změny libida nebo energie odrážejí účinek stabilních hladin exogenních hormonů."
     },
     "luteal": {
       "emotionalState": [
@@ -112,7 +115,8 @@
         "Na rozdávání úplně není.",
         "Šetřím si ji na to nejnutnější."
       ],
-      "detailedExplanation": "Po ovulaci se z prasklého folikulu stane žluté tělísko, které produkuje hlavně progesteron, ten zahušťuje a stabilizuje sliznici dělohy, tlumí další zrání vajíček a vytváří prostředí pro případné uhnízdění embrya. Pokud k oplodnění nedojde, žluté tělísko zaniká, progesteron a estrogen klesají, cévy ve sliznici se zavírají a tkáň začne odumírat, což spustí další menstruaci; kolísání hormonů v této fázi je hlavním důvodem PMS symptomů jako výkyvy nálady, nafouknutí, únava nebo změny chuti k jídlu."
+      "detailedExplanation": "Po ovulaci se z prasklého folikulu stane žluté tělísko, které produkuje hlavně progesteron, ten zahušťuje a stabilizuje sliznici dělohy, tlumí další zrání vajíček a vytváří prostředí pro případné uhnízdění embrya. Pokud k oplodnění nedojde, žluté tělísko zaniká, progesteron a estrogen klesají, cévy ve sliznici se zavírají a tkáň začne odumírat, což spustí další menstruaci; kolísání hormonů v této fázi je hlavním důvodem PMS symptomů jako výkyvy nálady, nafouknutí, únava nebo změny chuti k jídlu.",
+      "contraceptionExplanation": "Protože ovulace \"neprobíhá\", klasická luteální fáze je nahrazena dlouhodobou expozicí syntetickému progestinu. Progestin udržuje cervikální hlen hustý a děložní sliznici v pro implantaci méně příznivém stavu, což je podstatná součást antikoncepčního účinku. Subjektivní projevy, jako napětí v prsou, změny nálady nebo retence tekutin, odrážejí farmakologický účinek těchto hormonů."
     }
   },
 
