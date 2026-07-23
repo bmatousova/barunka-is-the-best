@@ -105,8 +105,6 @@ function renderToday() {
     `Den cyklu ${info.cycleDay} z ${cycleData.cycleSettings.averageCycleLengthDays}`;
   document.getElementById('today-summary').textContent =
     pickVariant(cycleData.shortTodaySummaries[phase], info.variantSeed);
-  document.getElementById('support-line').textContent =
-    pickVariant(cycleData.supportNotes[phase], info.variantSeed);
 }
 
 function populateDetailPanel(date) {
