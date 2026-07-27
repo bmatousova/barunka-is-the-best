@@ -12,6 +12,18 @@
 
   "anchorDate": "2026-06-24",
 
+  "moodCurveAnchors": [
+    { "day": 1, "value": 18 },
+    { "day": 6, "value": 38 },
+    { "day": 9, "value": 60 },
+    { "day": 12, "value": 80 },
+    { "day": 14, "value": 96 },
+    { "day": 16, "value": 78 },
+    { "day": 20, "value": 55 },
+    { "day": 24, "value": 35 },
+    { "day": 28, "value": 20 }
+  ],
+
   "phaseOrder": ["menstrual", "follicular", "ovulation", "luteal"],
 
   "phaseDefinitions": {
