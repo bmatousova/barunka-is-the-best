@@ -18,14 +18,26 @@ async function init() {
   }
 
 
-  setupTabs();
-  setupDetailPanel();
-  renderToday();
-  renderMoodChart();
+  // Each piece renders independently: if one crashes (e.g. a file that
+  // wasn't uploaded together with the others leaves some data missing),
+  // it's logged to the console instead of silently breaking everything
+  // that comes after it in this list.
+  safeRun(setupTabs);
+  safeRun(setupDetailPanel);
+  safeRun(renderToday);
+  safeRun(renderMoodChart);
 
   calendarViewDate = startOfMonth(new Date());
-  setupCalendarNav();
-  renderCalendar();
+  safeRun(setupCalendarNav);
+  safeRun(renderCalendar);
+}
+
+function safeRun(fn) {
+  try {
+    fn();
+  } catch (err) {
+    console.error(`${fn.name} failed:`, err);
+  }
 }
 
 function parseAnchorDate(str) {
@@ -136,6 +148,17 @@ function moodValueForDay(day, extendedAnchors) {
 }
 
 function renderMoodChart() {
+  const card = document.querySelector('.mood-card');
+  const hasAnchors = Array.isArray(cycleData.moodCurveAnchors) && cycleData.moodCurveAnchors.length >= 2;
+  if (!hasAnchors) {
+    // Data for this feature isn't present (e.g. an older data file got
+    // uploaded on its own) — hide the card cleanly instead of showing a
+    // title and legend with a blank gap where the chart should be.
+    if (card) card.style.display = 'none';
+    return;
+  }
+  if (card) card.style.display = '';
+
   const cycleLength = cycleData.cycleSettings.averageCycleLengthDays;
   const periodLength = cycleData.cycleSettings.averagePeriodLengthDays;
   const extended = buildExtendedMoodAnchors(cycleData.moodCurveAnchors, cycleLength);
