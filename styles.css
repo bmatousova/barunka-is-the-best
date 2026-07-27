@@ -54,13 +54,28 @@ body.no-scroll { overflow: hidden; }
 
 .view.is-hidden { display: none; }
 
-.today-card, .calendar-card {
+.today-card, .calendar-card, .mood-card {
   background: var(--color-card);
   border-radius: var(--radius);
   padding: 32px 24px;
   box-shadow: 0 8px 30px rgba(43, 38, 34, 0.06);
   text-align: center;
 }
+
+.mood-card { margin-top: 16px; padding: 24px 20px; }
+.mood-card-title { font-family: var(--font-serif); font-size: 1.05rem; margin: 0 0 16px; }
+
+.mood-chart-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.mood-area { fill: var(--color-accent); opacity: 0.16; }
+.mood-line { fill: none; stroke: var(--color-dark); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.mood-today-guide { stroke: var(--color-dark); stroke-width: 1; stroke-dasharray: 2 3; opacity: 0.5; }
+.mood-today-dot { fill: var(--color-dark); stroke: var(--color-card); stroke-width: 2; }
+.mood-today-label {
+  font-family: var(--font-sans); font-size: 8px; fill: var(--color-text-soft);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+.mood-legend { display: flex; flex-wrap: wrap; gap: 10px 16px; justify-content: center; margin-top: 16px; font-size: 0.74rem; color: var(--color-text-soft); }
 
 .phase-label { font-family: var(--font-serif); font-size: 1.4rem; margin: 0 0 4px; }
 .cycle-day { color: var(--color-text-soft); font-size: 0.85rem; margin: 0 0 20px; letter-spacing: 0.03em; text-transform: uppercase; }

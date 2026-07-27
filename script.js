@@ -21,6 +21,7 @@ async function init() {
   setupTabs();
   setupDetailPanel();
   renderToday();
+  renderMoodChart();
 
   calendarViewDate = startOfMonth(new Date());
   setupCalendarNav();
@@ -59,15 +60,10 @@ function pickVariant(value, seed) {
   return value || '';
 }
 
-function getCycleInfo(date) {
-  const anchor = parseAnchorDate(cycleData.anchorDate);
-  const cycleLength = cycleData.cycleSettings.averageCycleLengthDays;
-  const periodLength = cycleData.cycleSettings.averagePeriodLengthDays;
-
-  const diff = daysBetween(anchor, date);
-  const mod = ((diff % cycleLength) + cycleLength) % cycleLength; // always 0..cycleLength-1
-  const cycleDay = mod + 1; // 1-indexed
-
+// Pure day-number version of the phase boundaries, shared by getCycleInfo
+// (calendar/detail views) and the mood chart, so the chart's phase bands
+// can never drift out of sync with the calendar's phase coloring.
+function phaseForCycleDay(cycleDay, periodLength, cycleLength) {
   const ovulationDay = Math.max(1, cycleLength - 13); // last day of the fertile window (13 days before next period)
   // Ovulation window: a 3-day window ending on ovulationDay (e.g. days 13-15 of a 28-day cycle)
   const ovulationWindowStart = Math.max(1, ovulationDay - 2);
@@ -87,12 +83,122 @@ function getCycleInfo(date) {
     phase = 'luteal';
   }
 
+  return { phase, isPeriodDay, isOvulationDay, ovulationWindowStart, ovulationWindowEnd };
+}
+
+function getCycleInfo(date) {
+  const anchor = parseAnchorDate(cycleData.anchorDate);
+  const cycleLength = cycleData.cycleSettings.averageCycleLengthDays;
+  const periodLength = cycleData.cycleSettings.averagePeriodLengthDays;
+
+  const diff = daysBetween(anchor, date);
+  const mod = ((diff % cycleLength) + cycleLength) % cycleLength; // always 0..cycleLength-1
+  const cycleDay = mod + 1; // 1-indexed
+
+  const { phase, isPeriodDay, isOvulationDay } = phaseForCycleDay(cycleDay, periodLength, cycleLength);
+
   // Days since the anchor date. Used to rotate between the hand-written text
   // variants so the wording changes every single day (never repeating on two
   // consecutive days), not just once per ~28-day cycle.
   const variantSeed = diff;
 
   return { cycleDay, phase, isPeriodDay, isOvulationDay, variantSeed };
+}
+
+// Wraps the mood anchors around both ends of the cycle so day 1 blends
+// smoothly from the last anchor of the previous cycle, and the last day
+// blends smoothly into day 1 of the next one (no hard jump at the seam).
+function buildExtendedMoodAnchors(anchors, cycleLength) {
+  const sorted = [...anchors].sort((a, b) => a.day - b.day);
+  const first = sorted[0];
+  const last = sorted[sorted.length - 1];
+  return [
+    { day: last.day - cycleLength, value: last.value },
+    ...sorted,
+    { day: first.day + cycleLength, value: first.value }
+  ];
+}
+
+// Smoothly eases between two neighboring anchors (ease-in-out) instead of a
+// straight line, so the curve reads as an organic wave rather than a
+// connect-the-dots zigzag.
+function moodValueForDay(day, extendedAnchors) {
+  for (let i = 0; i < extendedAnchors.length - 1; i++) {
+    const a = extendedAnchors[i];
+    const b = extendedAnchors[i + 1];
+    if (day >= a.day && day <= b.day) {
+      const t = b.day === a.day ? 0 : (day - a.day) / (b.day - a.day);
+      const smoothT = (1 - Math.cos(t * Math.PI)) / 2;
+      return a.value + (b.value - a.value) * smoothT;
+    }
+  }
+  return extendedAnchors[extendedAnchors.length - 1].value;
+}
+
+function renderMoodChart() {
+  const cycleLength = cycleData.cycleSettings.averageCycleLengthDays;
+  const periodLength = cycleData.cycleSettings.averagePeriodLengthDays;
+  const extended = buildExtendedMoodAnchors(cycleData.moodCurveAnchors, cycleLength);
+  const todayCycleDay = getCycleInfo(new Date()).cycleDay;
+
+  const width = 320;
+  const height = 130;
+  const padX = 6;
+  const padTop = 14;
+  const padBottom = 22;
+  const chartW = width - padX * 2;
+  const chartH = height - padTop - padBottom;
+
+  const xForDay = (day) => padX + ((day - 1) / (cycleLength - 1)) * chartW;
+  const yForValue = (value) => padTop + ((100 - value) / 100) * chartH;
+
+  const points = [];
+  for (let day = 1; day <= cycleLength; day++) {
+    points.push({ day, value: moodValueForDay(day, extended) });
+  }
+
+  // Phase-colored background bands, using the exact same boundaries as the
+  // calendar so the chart never disagrees with it.
+  const bandColor = {
+    menstrual: 'var(--color-dark)',
+    follicular: 'rgba(201, 166, 122, 0.35)',
+    ovulation: 'var(--color-accent)',
+    luteal: 'rgba(43, 38, 34, 0.12)'
+  };
+  const bandOpacity = { menstrual: 0.24, follicular: 1, ovulation: 0.5, luteal: 1 };
+  let bandsSvg = '';
+  let segStart = 1;
+  let segPhase = phaseForCycleDay(1, periodLength, cycleLength).phase;
+  for (let day = 2; day <= cycleLength + 1; day++) {
+    const phase = day <= cycleLength ? phaseForCycleDay(day, periodLength, cycleLength).phase : null;
+    if (phase !== segPhase) {
+      const x1 = xForDay(segStart);
+      const x2 = day <= cycleLength ? xForDay(day) : width - padX;
+      bandsSvg += `<rect x="${x1.toFixed(1)}" y="0" width="${Math.max(0, x2 - x1).toFixed(1)}" height="${height}" fill="${bandColor[segPhase]}" opacity="${bandOpacity[segPhase]}"></rect>`;
+      segStart = day;
+      segPhase = phase;
+    }
+  }
+
+  const linePoints = points.map(p => `${xForDay(p.day).toFixed(1)},${yForValue(p.value).toFixed(1)}`).join(' ');
+  const areaPoints = `${xForDay(1).toFixed(1)},${(height - padBottom).toFixed(1)} ${linePoints} ${xForDay(cycleLength).toFixed(1)},${(height - padBottom).toFixed(1)}`;
+
+  const todayValue = moodValueForDay(todayCycleDay, extended);
+  const todayX = xForDay(todayCycleDay);
+  const todayY = yForValue(todayValue);
+
+  const svg = `
+    <svg viewBox="0 0 ${width} ${height}" class="mood-chart-svg" role="img" aria-label="Graf nálady během cyklu, dnešek zvýrazněn tečkou">
+      <g class="mood-bands">${bandsSvg}</g>
+      <polygon points="${areaPoints}" class="mood-area"></polygon>
+      <polyline points="${linePoints}" class="mood-line"></polyline>
+      <line x1="${todayX.toFixed(1)}" y1="${todayY.toFixed(1)}" x2="${todayX.toFixed(1)}" y2="${(height - padBottom).toFixed(1)}" class="mood-today-guide"></line>
+      <circle cx="${todayX.toFixed(1)}" cy="${todayY.toFixed(1)}" r="5.5" class="mood-today-dot"></circle>
+      <text x="${todayX.toFixed(1)}" y="${height - 6}" class="mood-today-label" text-anchor="middle">dnes</text>
+    </svg>
+  `;
+
+  document.getElementById('mood-chart').innerHTML = svg;
 }
 
 function renderToday() {

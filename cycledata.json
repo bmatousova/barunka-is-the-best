@@ -12,6 +12,18 @@
 
   "anchorDate": "2026-06-24",
 
+  "moodCurveAnchors": [
+    { "day": 1, "value": 18 },
+    { "day": 6, "value": 38 },
+    { "day": 9, "value": 60 },
+    { "day": 12, "value": 80 },
+    { "day": 14, "value": 96 },
+    { "day": 16, "value": 78 },
+    { "day": 20, "value": 55 },
+    { "day": 24, "value": 35 },
+    { "day": 28, "value": 20 }
+  ],
+
   "phaseOrder": ["menstrual", "follicular", "ovulation", "luteal"],
 
   "phaseDefinitions": {
@@ -118,6 +130,21 @@
       "detailedExplanation": "Po ovulaci se z prasklého folikulu stane žluté tělísko, které produkuje hlavně progesteron, ten zahušťuje a stabilizuje sliznici dělohy, tlumí další zrání vajíček a vytváří prostředí pro případné uhnízdění embrya. Pokud k oplodnění nedojde, žluté tělísko zaniká, progesteron a estrogen klesají, cévy ve sliznici se zavírají a tkáň začne odumírat, což spustí další menstruaci; kolísání hormonů v této fázi je hlavním důvodem PMS symptomů jako výkyvy nálady, nafouknutí, únava nebo změny chuti k jídlu.",
       "contraceptionExplanation": "Protože ovulace \"neprobíhá\", klasická luteální fáze je nahrazena dlouhodobou expozicí syntetickému progestinu. Progestin udržuje cervikální hlen hustý a děložní sliznici v pro implantaci méně příznivém stavu, což je podstatná součást antikoncepčního účinku. Subjektivní projevy, jako napětí v prsou, změny nálady nebo retence tekutin, odrážejí farmakologický účinek těchto hormonů."
     }
+  },
+
+  "supportNotes": {
+    "menstrual": [
+      "Utrhni mi venku kytičku a dopřej mi hromadu čokolády."
+    ],
+    "follicular": [
+      "Daruj mi kytičku a vytáhni mě na procházku."
+    ],
+    "ovulation": [
+      "Kup mi kytičku a miluj mě."
+    ],
+    "luteal": [
+      "Kytičkou mi uděláš radost a to stačí."
+    ]
   },
 
   "playfulLines": {

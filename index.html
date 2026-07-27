@@ -27,6 +27,17 @@
         <p class="today-summary" id="today-summary">—</p>
         <button type="button" class="more-btn" id="more-btn" aria-expanded="false" aria-controls="detail-panel">Potřebuju víc informací</button>
       </div>
+
+      <div class="mood-card">
+        <p class="mood-card-title">Nálada během cyklu</p>
+        <div id="mood-chart"></div>
+        <div class="mood-legend">
+          <span class="legend-item"><span class="dot dot-menstrual"></span>Menstruace</span>
+          <span class="legend-item"><span class="dot dot-follicular"></span>Folikulární</span>
+          <span class="legend-item"><span class="dot dot-ovulation"></span>Ovulace</span>
+          <span class="legend-item"><span class="dot dot-luteal"></span>Luteální</span>
+        </div>
+      </div>
     </section>
 
     <section id="view-calendar" class="view is-hidden" role="tabpanel" aria-labelledby="tab-calendar">
